@@ -15,7 +15,7 @@ function question1 () {
   }
   var totalPrice = newArray.reduce(function(a , b){return a + b});
   var answer = (totalPrice / data.length);
-  console.log ('answer' , answer);
+  console.log (answer);
 }
 
 
@@ -26,10 +26,10 @@ function question2 () {
   var betweenArray = [];
   for( let i = 0; i < data.length; i++){
     if(data[i].price >= 14 && data[i].price <= 18 ){
-      betweenArray.push(data[i].title);
+      betweenArray.push(data[i]);
     }
   }
-  console.log('answer' , betweenArray);
+  console.log( betweenArray);
 }
 
 
@@ -39,7 +39,7 @@ function question3 () {
   // Answer:
   for( let i = 0; i < data.length; i++){
     if(data[i].currency_code === "GBP"){
-      console.log('answer' , data[i].title , data[i].price);
+      console.log( data[i].title , data[i].price);
     }
   }
 }
@@ -52,7 +52,7 @@ function question4 () {
   for(let i = 0; i < data.length; i++){
     if(data[i].materials.indexOf('wood') > -1){
       woodArray.push(data[i].title);
-      console.log('answer' , woodArray);
+      console.log( woodArray);
     }
   }
 }
@@ -65,7 +65,7 @@ function question5 () {
   let manyArray = [];
   for(let i = 0; i < data.length; i++){
     if(data[i].materials.length >= 8)
-    console.log('answer' , data[i].title , data[i].materials.length , data[i].materials);
+    console.log( data[i].title , data[i].materials.length , data[i].materials);
   }
 }
 
@@ -73,4 +73,11 @@ function question5 () {
 // Answer:
 function question6 () {
   // Answer:
+  var creatorArray = [];
+  for(i = 0; i < data.length; i++){
+    if(data[i].who_made === 'i_did'){
+     creatorArray.push(data[i].listing_id);
+    }
+  }
+  console.log( creatorArray.length);
 }
